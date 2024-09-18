@@ -28,8 +28,8 @@ def get_mensajes_transacciones(db: Session = Depends(get_db)):
     """)
 
     result = db.execute(query).fetchall()
-
+   # PREGUNTAR A RAFA POR QUE EL SQL SI RETORNA SIN EL MAPEO
     # Mapeo de los resultados a una lista de objetos Pydantic
-    mensajes = [Mensaje(mensaje=row["mensaje"]) for row in result]
+    #mensajes = [Mensaje(mensaje=row["mensaje"]) for row in result]
 
-    return mensajes
+    return result

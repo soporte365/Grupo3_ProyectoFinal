@@ -7,6 +7,7 @@ from typing import List
 from app.v1.database.db import get_db
 from app.v1.schema.schema_emisor_receptor import EmisorReceptorDetalle
 
+
 router = APIRouter(
     prefix="/emisor-receptor",
     tags=["Emisor-Receptor"]
@@ -49,8 +50,7 @@ def get_emisor_receptor_detalle(db: Session = Depends(get_db)):
             tipo_cuenta=row["tipo_cuenta"],
             numero_cuenta=row["numero_cuenta"],
             banco=row["banco"]
-        )
-        for row in result
+        ) for row in result
     ]
-
+# NO FUNCIONA LLAMANDO DIRECTO A RESULT COMO EN MENSAJE
     return detalles

@@ -83,13 +83,13 @@ class Usuarios(Base):
     id_user = Column(Integer, primary_key=True, autoincrement=True, index=True)
     u_nombr = Column(String(50), nullable=False)
     u_email = Column(String(50), nullable=False)
-    u_pass = Column(String(20), nullable=False)
+    u_pass = Column(String, nullable=False)
     u_act = Column(String(1), nullable=False)
     u_tipo = Column(String(1), nullable=False)
     u_fechcrea = Column(DateTime, nullable=False, default=datetime.utcnow)
     u_fechlogi = Column(DateTime, nullable=False, default=datetime.utcnow)
 
 
-DATABASE_URL = "postgresql://postgres:1234@localhost:5432/remesas"
+DATABASE_URL = "postgresql://postgres:123456@localhost:5432/remesas"
 engine = create_engine(DATABASE_URL)
 Base.metadata.create_all(bind=engine)

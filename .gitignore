@@ -1,0 +1,77 @@
+# Entornos Virtuales
+venv/
+.venv/
+env/
+ENV/
+__pycache__/
+
+# Archivos de configuración y credenciales
+config.ini
+*.env
+
+# Archivos y directorios específicos de PyCharm
+.idea/
+*.iml
+
+# Archivos de compilación y cachés
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Directorios de salida
+build/
+dist/
+*.egg-info/
+.eggs/
+htmlcov/
+*.log
+*.pot
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Dependencias descargadas
+pip-wheel-metadata/
+*.egg
+*.egg-info
+.Python
+
+# Archivos de logs y dumps
+*.log
+*.pid
+*.seed
+*.cover
+
+# Archivos de backup
+*.bak
+*.swp
+*~
+
+# IDE y editor de código
+.vscode/
+*.code-workspace
+
+# Archivos de Docker y contenedores
+*.dockerfile
+docker-compose.yml
+Dockerfile
+
+# Archivos de Jupyter Notebooks
+.ipynb_checkpoints
+
+# Archivos de herramientas de seguridad
+.secret/
+
+# Documentación
+docs/_build/
+
+# Archivos temporales de test
+.tox/
+.nox/
+coverage/
+.coverage
+.cache/
+pytest_cache/

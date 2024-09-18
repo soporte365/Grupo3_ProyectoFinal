@@ -27,15 +27,15 @@ def create_tasas(tasas: Tasa, db: Session = Depends(get_db)):
 
 
 @router.get("/{id}", response_model=Tasa)  # Usa el esquema Pydantic
-def get_transaccion(id: int, tasas: Tasa, db: Session = Depends(get_db)):
+def get_tasa_id(id: int, tasas: Tasa, db: Session = Depends(get_db)):
     """Obtener detalles de una tasa específica por su ID."""
     db_tasa = db.query(TasaModel).filter(TasaModel.id_transaccion == id).first()
     if tasas is None:
-        raise HTTPException(status_code=404, detail="Transacción no encontrada")
+        raise HTTPException(status_code=404, detail="Tasa no encontrada")
     return tasas
 
 @router.put("/{id}", response_model=Tasa)
-def update_transaccion(id: int, tasas: Tasa, db: Session = Depends(get_db)):
+def update_tasas(id: int, tasas: Tasa, db: Session = Depends(get_db)):
     """Actualizar una tasa específica por su ID."""
     db_tasa = db.query(TasaModel).filter(TasaModel.id_tasa == id).first()
     if db_tasa is None:

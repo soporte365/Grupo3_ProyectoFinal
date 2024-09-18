@@ -8,6 +8,7 @@ from app.v1.router.emisor_receptor import router as emisor_receptor_router
 from app.v1.router.transaccion_cliente import router as transaccion_cliente_router
 from app.v1.router.mensaje import router as mensaje_router
 from app.v1.router.transaccion_resumen import router as transaccion_resumen_router
+from app.v1.router.tasass import router as tasa_router
 from app.v1.services.middlewar import TimingMiddleware
 
 app = FastAPI()
@@ -19,6 +20,7 @@ app.include_router(emisor_receptor_router)
 app.include_router(transaccion_cliente_router)
 app.include_router(mensaje_router)
 app.include_router(transaccion_resumen_router)
+app.include_router(tasa_router)
 
 
 @app.get("/")

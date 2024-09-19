@@ -22,7 +22,7 @@ def get_transacciones(db: Session = Depends(get_db)):
 @router.get("/{id}", response_model=Transaccion)  # Usa el esquema Pydantic
 def get_transaccion(id: int, db: Session = Depends(get_db)):
     """Obtener detalles de una transacción específica por su ID."""
-    transaccion = db.query(TransaccionModel).filter(TransaccionModel.id_transaccion == id).first()
+    transaccion = db.query(TransaccionModel).filter(TransaccionModel.id_transac == id).first()
     if transaccion is None:
         raise HTTPException(status_code=404, detail="Transacción no encontrada")
     return transaccion
@@ -41,7 +41,7 @@ def create_transaccion(transaccion: TransaccionCreate, db: Session = Depends(get
 @router.put("/{id}", response_model=Transaccion)  # Usa el esquema Pydantic
 def update_transaccion(id: int, transaccion: TransaccionUpdate, db: Session = Depends(get_db)):
     """Actualizar una transacción específica por su ID."""
-    transaccion_db = db.query(TransaccionModel).filter(TransaccionModel.id_transaccion == id).first()
+    transaccion_db = db.query(TransaccionModel).filter(TransaccionModel.id_transac == id).first()
     if transaccion_db is None:
         raise HTTPException(status_code=404, detail="Transacción no encontrada")
 
@@ -56,7 +56,7 @@ def update_transaccion(id: int, transaccion: TransaccionUpdate, db: Session = De
 @router.delete("/{id}")
 def delete_transaccion(id: int, db: Session = Depends(get_db)):
     """Eliminar una transacción específica por su ID."""
-    transaccion = db.query(TransaccionModel).filter(TransaccionModel.id_transaccion == id).first()
+    transaccion = db.query(TransaccionModel).filter(TransaccionModel.id_transac == id).first()
     if transaccion is None:
         raise HTTPException(status_code=404, detail="Transacción no encontrada")
 

@@ -7,7 +7,7 @@ __pycache__/
 
 # Archivos de configuración y credenciales
 config.ini
-*.env
+#*.env
 
 # Archivos y directorios específicos de PyCharm
 .idea/
